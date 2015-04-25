@@ -58,3 +58,4 @@ Git 命令：
 	$ git reset --hard HEAD^
 	## git中用HEAD表示当前版本，HEAD^表示上一版本，HEAD^^表示上一版本
 		HEAD~100表示上100个版本
+	## 
