@@ -29,6 +29,10 @@ Git 命令：
 	$ git diff index.txt
 	## diff 命令查看到的是工作区内文件和缓存区文件的区别
 	## 如果index.txt 已经通过add命令添加的缓存区，则无法查看
+	## 如果查看工作区和版本库的区别，可以使用参数 HEAD 或指定版本号
+	$ git diff HEAD -- index.txt
+	$ git diff 287d9bd -- index.txt
+
 6、查看commit历史记录
 	$ git log
 	commit 287d9bd301f8aa18d638021926ae690b6ba35507
@@ -58,4 +62,17 @@ Git 命令：
 	$ git reset --hard HEAD^
 	## git中用HEAD表示当前版本，HEAD^表示上一版本，HEAD^^表示上一版本
 		HEAD~100表示上100个版本
-	## 
+	## 或者直接指定版本号（不用全输，只许前面几位即可）
+	$ git reset --hard 534688
+8、撤销回退
+	当使用reset命令回退到以前的版本后，发现回退多了，或者想撤销回退操作
+	那只能使用指定版本号的方式了
+	可是git的版本号这么变态，谁能记得住？好吧，git帮你记！
+	查看版本号的命令：
+	$ git reflog
+	6163ac9 HEAD@{0}: reset: moving to 6163ac
+	287d9bd HEAD@{1}: reset: moving to HEAD~2
+	6163ac9 HEAD@{2}: commit: ##
+	186103f HEAD@{3}: commit: 7 版本回退”
+	287d9bd HEAD@{4}: commit: 5 查看工作区更改内容
+	5346884 HEAD@{5}: commit: add index.txt
