@@ -1,1 +1,18 @@
-Git has a mutable index called stage.
+Git 命令：
+1、在Windows上安装Git，安装完成后，还需要最后一步设置，在命令行输入：
+	$ git config --global user.name "Your Name"
+	$ git config --global user.email "email@example.com"
+2、创建版本库
+	首先，选择一个合适的地方，创建一个空目录：
+	$ cd /d/appData
+	$ mkdir gitRepo
+	$ cd gitRepo
+	$ pwd
+	/d/appData/gitRepo
+	##pwd命令用于显示当前目录
+	然后，通过git init命令把这个目录变成Git可以管理的仓库：
+	$ git init
+	Initialized empty Git repository in /d/appData/gitRepo/.git/
+
+3、把文件添加到版本库
+	
