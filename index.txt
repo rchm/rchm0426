@@ -25,6 +25,36 @@ Git 命令：
 	该命令查看到的结果分为两部分：
 	一，add到缓存区内等待被commit到版本库的更改
 	二，工作区内的还未add到缓存区的更改
-5、查看更改内容
+5、查看工作区更改内容
 	$ git diff index.txt
+	## diff 命令查看到的是工作区内文件和缓存区文件的区别
+	## 如果index.txt 已经通过add命令添加的缓存区，则无法查看
+6、查看commit历史记录
+	$ git log
+	commit 287d9bd301f8aa18d638021926ae690b6ba35507
+	Author: rchm <rchm8519@sina.com>
+	Date:   Sat Apr 25 16:50:58 2015 +0800
 
+		5 查看工作区更改内容
+
+	commit 53468841ca9e73786567772efbbaafdfe6a30482
+	Author: rchm <rchm8519@sina.com>
+	Date:   Sat Apr 25 16:22:49 2015 +0800
+
+		add index.txt
+
+	commit 17a85a95ef019058f04d320a157ef5a218d069f2
+	Author: rchm <rchm8519@sina.com>
+	Date:   Sat Apr 25 15:58:17 2015 +0800
+
+		add of files
+	## 其中 287d9b... 一串字符 叫做 commit_id 版本号
+	## 如果信息太多，想要显示简洁一写，可以试试加上--pretty=oneline参数：
+	$ git log --pretty=oneline
+	287d9bd301f8aa18d638021926ae690b6ba35507 5 查看工作区更改内容
+	53468841ca9e73786567772efbbaafdfe6a30482 add index.txt
+	17a85a95ef019058f04d320a157ef5a218d069f2 add of files
+7、版本回退
+	$ git reset --hard HEAD^
+	## git中用HEAD表示当前版本，HEAD^表示上一版本，HEAD^^表示上一版本
+		HEAD~100表示上100个版本
