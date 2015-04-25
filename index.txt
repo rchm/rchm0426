@@ -76,3 +76,9 @@ Git 命令：
 	186103f HEAD@{3}: commit: 7 版本回退”
 	287d9bd HEAD@{4}: commit: 5 查看工作区更改内容
 	5346884 HEAD@{5}: commit: add index.txt
+9、废弃工作区修改
+	$ git checkout -- index.txt
+	## 这个命令会把你工作区中的修改回退到最后一次add命令之前的状态
+	## 即如果缓存区有内容，则回退到和缓存区一直
+	## 如果缓存区为空，则回退到和版本库一致
+
