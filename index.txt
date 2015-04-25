@@ -1,18 +1,30 @@
-Git ���
-1����Windows�ϰ�װGit����װ��ɺ󣬻���Ҫ���һ�����ã������������룺
+Git 命令：
+1、在Windows上安装Git，安装完成后，还需要最后一步设置，在命令行输入：
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
-2�������汾��
-	���ȣ�ѡ��һ�����ʵĵط�������һ����Ŀ¼��
+2、创建版本库
+	首先，选择一个合适的地方，创建一个空目录：
 	$ cd /d/appData
 	$ mkdir gitRepo
 	$ cd gitRepo
 	$ pwd
 	/d/appData/gitRepo
-	##pwd����������ʾ��ǰĿ¼
-	Ȼ��ͨ��git init��������Ŀ¼���Git���Թ����Ĳֿ⣺
+	##pwd命令用于显示当前目录
+	然后，通过git init命令把这个目录变成Git可以管理的仓库：
 	$ git init
 	Initialized empty Git repository in /d/appData/gitRepo/.git/
 
-3�����ļ����ӵ��汾��
-	
+3、把文件添加到版本库
+	$ git add index.txt
+	$ git commit -m "add index.txt"
+	## add 命令把文件提交到缓存区
+	## commit 把缓存区文件提交到版本库，-m 参数是指定comments
+	## 可以add多次，一次commit
+4、查看版本库状态
+	$ git status
+	该命令查看到的结果分为两部分：
+	一，add到缓存区内等待被commit到版本库的更改
+	二，工作区内的还未add到缓存区的更改
+5、查看更改内容
+	$ git diff index.txt
+
